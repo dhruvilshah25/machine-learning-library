@@ -218,11 +218,11 @@ if __name__ == '__main__':
         testdataset[i] = testdataset[i].apply(lambda x: 1 if x > testdataset[i].median() else 0)
     bagged_predictors = []
     first_trees = []
-    for i in range(100):
+    for i in range(10):
         random_indexes = random.sample(range(dataset.shape[0]),1000)
         new_dataset = dataset.iloc[random_indexes]
         print("starting fit ", i)
-        bg = Bagging(500)
+        bg = Bagging(50)
         bg.fit(new_dataset)
         print("ending fit ", i)
         bagged_predictors.append(bg)

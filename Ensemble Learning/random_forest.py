@@ -217,12 +217,12 @@ if __name__ == '__main__':
     trainingerror = {}
     testerrors = {}
     featuresize = [2,4,6]
-    iteration = [x for x in range(1,501)]
+    iteration = [x for x in range(1,10)]
 
     for j in featuresize:
         trainingerror[j] = []
         testerrors[j] = []
-        for i in range(1,501):
+        for i in range(1,10):
             rf = RandomForest(i,j)
             rf.fit(dataset)
             predictedlabels_train = rf.testdataset(dataset)
